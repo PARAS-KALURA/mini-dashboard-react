@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 const App = () => {
   
-  
+  const userName = "Paras Kalura";
 
   return (
 
@@ -16,9 +16,9 @@ const App = () => {
     <BrowserRouter>
     <div className='flex'>
 
-      <Sidebar />
+      <Sidebar userName = {userName}  />
 
-      <main>
+      <main className="flex-1 p-6">
         <Routes>
        <Route path='/' element = {<Home/>} />
        <Route path='/setting' element = {<Setting/>}  />
