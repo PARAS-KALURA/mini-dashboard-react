@@ -1,9 +1,10 @@
-import React from 'react'
-
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <>
+      <h1 className="text-2xl font-bold mb-4">Home</h1>
+      <p>Welcome to the Mini Dashboard App.</p>
+    </>
+  );
+};
 
-export default Home
+export default Home;
