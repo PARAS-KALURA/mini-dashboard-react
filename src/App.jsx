@@ -1,24 +1,33 @@
-import React from 'react'
+import React from 'react';
+import Sidebar from "./Sidebar";
+import Home from "./components/Home";
+import Dashboard from "./components/Dashboard";
+import Task from "./components/Task";
+import Setting from "./components/Setting";
+import { BrowserRouter, Route } from 'react-router-dom'
 
 const App = () => {
+  
+  
+
   return (
+
     <>
-    <aside
-    className='min-h-screen w-60 bg-blue-600 text-white'
-    >
-      <h2 className='text-center pt-6  pb-8 text-2xl font-bold ' >My App</h2>
-      <ul className='text-center p-4 flex gap-4 flex-col ' >
+    <BrowserRouter>
+    <div className='flex'>
 
-        <li className='border border-blue-900 rounded-sm px-2 py-1 cursor-pointer hover:scale-110 transition-transform' >Home</li>
+      <Sidebar />
 
-        <li className='border border-blue-900 rounded-sm px-2 py-1 cursor-pointer hover:scale-110 transition-transform' >Dashboard</li>
-        
-        <li className='border border-blue-900 rounded-sm px-2 py-1 cursor-pointer hover:scale-110 transition-transform' >Task</li>
+      <main>
+       <Route path='/' element = {<Home/>}  />
+       <Route path='/setting' element = {<Setting/>}  />
+       <Route path='/task' element = {<Task/>}  />
+       <Route path='/dashboard' element = {<Dashboard/>}  />
+      </main>
 
-        <li className='border border-blue-900 rounded-sm px-2 py-1 cursor-pointer hover:scale-110 transition-transform' >Setting</li>
+    </div>
 
-      </ul>
-    </aside>
+    </BrowserRouter>
     </>
   )
 }
