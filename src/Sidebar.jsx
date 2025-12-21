@@ -10,7 +10,7 @@ const Sidebar = ({ userName }) => {
 
   return (
     <aside className="bg-blue-600 w-60 min-h-screen text-white flex flex-col p-5">
-      <h2 className="text-3xl font-bold text-center">My App</h2>
+      <h2 className="text-3xl font-bold text-center">KeKKa</h2>
       <p className="text-sm text-center mt-2">Welcome {userName}</p>
 
       <ul className="mt-10 flex flex-col gap-4">
@@ -19,7 +19,7 @@ const Sidebar = ({ userName }) => {
             key={link.path}
             to={link.path}
             className={({ isActive }) =>
-              `border rounded px-3 py-2 text-center transition-transform hover:scale-105
+              `border rounded px-3 py-2 text-center transition-transform hover:scale-105 hover:bg-white text-blue-900
               ${
                 isActive
                   ? "bg-white text-blue-600 border-white"
@@ -32,7 +32,7 @@ const Sidebar = ({ userName }) => {
         ))}
       </ul>
 
-      <button className="mt-auto border border-white rounded px-3 py-2 hover:bg-white hover:text-blue-600">
+      <button className="mt-auto border border-white cursor-pointer rounded px-3 py-2 hover:bg-white hover:text-blue-600">
         Logout
       </button>
     </aside>
