@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ userName }) => {
   const links = [
+
     { name: "Home", path: "/" },
     { name: "Dashboard", path: "/dashboard" },
     { name: "Task", path: "/task" },
@@ -19,7 +20,7 @@ const Sidebar = ({ userName }) => {
             key={link.path}
             to={link.path}
             className={({ isActive }) =>
-              `border rounded px-3 py-2 text-center transition-transform hover:scale-105 hover:bg-white text-blue-900
+              `border rounded px-3 py-2 text-center transition-transform hover:scale-105 hover:bg-white hover:text-blue-900
               ${
                 isActive
                   ? "bg-white text-blue-600 border-white"
@@ -32,7 +33,7 @@ const Sidebar = ({ userName }) => {
         ))}
       </ul>
 
-      <button className="mt-auto border border-white cursor-pointer rounded px-3 py-2 hover:bg-white hover:text-blue-600">
+      <button className="mt-auto border border-white cursor-pointer rounded px-3 py-2 hover:bg-red-600 hover:text-white">
         Logout
       </button>
     </aside>
