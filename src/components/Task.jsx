@@ -1,51 +1,30 @@
-import { useState } from "react";
+import React from 'react'
 
 const Task = () => {
-  const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState([]);
-
-  const addTask = () => {
-    if (task.trim() === "") return;
-
-    setTasks([...tasks, task]);
-    setTask("");
-  };
-
   return (
-    <div className="p-6 max-w-md">
-      <h1 className="text-2xl font-bold mb-4">Add Task</h1>
-
-      {/* Input + Button */}
-      <div className="flex gap-2">
-        <input
-          type="text"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-          placeholder="Enter task..."
-          className="flex-1 border px-3 py-2 rounded"
-        />
-
-        <button
-          onClick={addTask}
-          className="bg-blue-600 text-white px-4 rounded hover:bg-blue-700"
-        >
-          Add
-        </button>
+    <div className=' px-6 pt-10 mb-10 max-w-4xl' >
+    {/* Header */}
+    <header className='flex justify-between items-center' >
+      <div className='space-y-1' >
+      <h3 className='text-2xl font-semibold' >Task</h3>
+      <p className='text-sm text-gray-500'>Manage and track your tasks</p>
       </div>
+      
+      <div>
+        <button className='bg-blue-500 px-4 py-2 text-white rounded cursor-pointer hover:bg-blue-600' >+New Task</button>
+      </div>
+    </header>
 
-      {/* Task List */}
-      <ul className="mt-4 space-y-2">
-        {tasks.map((t, index) => (
-          <li
-            key={index}
-            className="border px-3 py-2 rounded bg-gray-50"
-          >
-            {t}
-          </li>
-        ))}
-      </ul>
+    {/* Tasks */}
+
+    <div className='divide-y border border-gray-300 mt-10' >
+      <p className='' >1</p>
+      <p>2</p>
+      <p>3</p>
     </div>
-  );
-};
 
-export default Task;
+    </div>
+  )
+}
+
+export default Task
