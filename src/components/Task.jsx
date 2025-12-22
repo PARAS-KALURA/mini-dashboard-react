@@ -5,7 +5,10 @@ const Task = () => {
   const [task, setTask] = useState([]);
 
   const addTask = () => {
-    console.log("Added");
+    if(task.trim() === "") return;
+
+    setTask([...tasks, task]);
+    setTask("");
     
   }
 
@@ -33,14 +36,14 @@ const Task = () => {
 
     {/* Tasks */}
  
-    <div className="divide-y border border-gray-300 rounded-md mt-2">
-  <p className="p-3">1</p>
-  <p className="p-3">2</p>
-  <p className="p-3">3</p>
+    <div className="divide-y border border-gray-300 mt-2">
+  {tasks.map((t, index) => (
+    <p key={index} className="p-3">
+      {t}
+    </p>
+  ))}
 </div>
 
-
-    </div>
   )
 }
 
